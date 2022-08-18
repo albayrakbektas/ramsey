@@ -11,44 +11,44 @@
       <ArticlesSection id="eight" class="section" />
       <ContactSection id="nine" class="section" />
     </div>
-    <!--    <div class="dots">-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(1)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(2)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(3)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(4)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(5)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(6)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(7)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(8)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(9)"-->
-    <!--      ></span>-->
-    <!--    </div>-->
+    <div class="dots">
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(1)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(2)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(3)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(4)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(5)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(6)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(7)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(8)"
+      ></span>
+      <span
+        class="w3-badge demo w3-border w3-hover-white"
+        @click="currentDiv(9)"
+      ></span>
+    </div>
   </div>
 </template>
 
@@ -89,25 +89,32 @@ export default {
       if (this.counter > 0) {
         return;
       }
-      setTimeout(() => {
-        document
-          .getElementById("sections")
-          .addEventListener("wheel", this.handleWheel);
-      }, 1000);
+      let firstSection = document.querySelector("#one");
+      let sections = document.querySelectorAll(".section");
       let activeSection = document.querySelector(".active-section");
-      let nextSibling = activeSection.nextElementSibling;
+      let nextSibling = activeSection.nextElementSibling
+        ? activeSection.nextElementSibling
+        : null;
       let prevSibling = activeSection.previousElementSibling;
-      console.log(`Prev===${prevSibling}--------- Next===${nextSibling}`);
       activeSection.classList.remove("active-section");
       if (e.deltaY > 0) {
-        activeSection.style.transform = "translate3d(0px, -100%, 0px)";
-        nextSibling.classList.add("active-section");
-      } else if (e.deltaY < 0) {
-        if (prevSibling === null) {
-          return;
+        if (activeSection.id === "eight") {
+          sections.forEach((e) => {
+            e.style.transform = "translate3d(0px, 0%, 0px)";
+          });
+          firstSection.classList.add("active-section");
+        } else {
+          activeSection.style.transform = "translate3d(0px, -100%, 0px)";
+          nextSibling.classList.add("active-section");
         }
-        activeSection.style.transform = "translate3d(0px, 0px, 0px)";
-        prevSibling.classList.add("active-section");
+      } else if (e.deltaY < 0) {
+        console.log(activeSection.id);
+        if (activeSection.id === "one") {
+          activeSection.classList.add("active-section");
+        } else {
+          prevSibling.classList.add("active-section");
+          prevSibling.style.transform = "translate3d(0px, 0px, 0px)";
+        }
       }
       this.counter++;
       setTimeout(() => {
@@ -160,7 +167,7 @@ export default {
   position: absolute;
   right: calc(5rem - (13px / 2));
   top: calc(50% - 6rem);
-  z-index: 5;
+  z-index: 99;
 }
 .w3-transparent {
   background-color: unset !important;

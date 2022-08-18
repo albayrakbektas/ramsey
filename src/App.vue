@@ -37,7 +37,7 @@ body {
   background-color: #1b1b1b;
   height: 100vh;
   width: 100vw;
-  //overflow: hidden;
+  overflow: hidden;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -105,17 +105,4 @@ a {
   color: #757575;
   opacity: 0.1;
 }
-//.bg-img {
-//  position: absolute;
-//  z-index: 0;
-//  top: 0;
-//  bottom: 0;
-//  left: 0;
-//  right: 0;
-//  height: 100%;
-//  width: 100%;
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//  background-image: url("http://paul-themes.com/wordpress/ramsay/wp-content/uploads/2020/01/attachment-18.jpg");
-//}
 </style>
