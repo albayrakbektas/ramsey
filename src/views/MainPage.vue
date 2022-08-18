@@ -104,7 +104,7 @@ export default {
           });
           firstSection.classList.add("active-section");
         } else {
-          activeSection.style.transform = "translate3d(0px, -100%, 0px)";
+          activeSection.style.transform = "translate3d(0px, -100vh, 0px)";
           nextSibling.classList.add("active-section");
         }
       } else if (e.deltaY < 0) {
