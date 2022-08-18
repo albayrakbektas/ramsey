@@ -53,15 +53,15 @@
 </template>
 
 <script>
-import FourthSection from "@/sections/AboutUsSection";
-import FirstSection from "@/sections/MeSection";
-import SecondSection from "@/sections/WhatIDoSection";
-import ThirdSection from "@/sections/ResumeSection";
-import FifthSection from "@/sections/MyWorksSection";
-import SixthSection from "@/sections/PartnersSection";
-import SeventhSection from "@/sections/ReviewsSection";
-import ArticlesSection from "@/sections/ArticlesSection";
-import ContactSection from "@/sections/ContactSection";
+import FourthSection from "@/views/AboutUsSection";
+import FirstSection from "@/views/MeSection";
+import SecondSection from "@/views/WhatIDoSection";
+import ThirdSection from "@/views/ResumeSection";
+import FifthSection from "@/views/MyWorksSection";
+import SixthSection from "@/views/PartnersSection";
+import SeventhSection from "@/views/ReviewsSection";
+import ArticlesSection from "@/views/ArticlesSection";
+import ContactSection from "@/views/ContactSection";
 export default {
   name: "MainPage",
   components: {
