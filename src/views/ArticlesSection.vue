@@ -59,9 +59,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  padding: 0 70px;
-}
 .rotate-text {
   margin-left: 40px;
 }

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="bg-text">
-      <span class="rotate-text">my works</span>
-    </div>
+    <BgText text="my works" />
     <div class="content">
       <ProjectDetails
         v-for="(item, index) of projects"
@@ -19,9 +17,10 @@
 
 <script>
 import ProjectDetails from "@/components/ProjectDetails";
+import BgText from "@/components/BgText";
 export default {
   name: "FifthSection",
-  components: { ProjectDetails },
+  components: { BgText, ProjectDetails },
   data() {
     return {
       projects: [
@@ -29,21 +28,29 @@ export default {
           number: "01",
           title: "Abstract Skat",
           subTitle: "Illustration",
+          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
+          alt: "as",
         },
         {
           number: "02",
           title: "Borato Prism",
           subTitle: "Branding",
+          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
+          alt: "as",
         },
         {
           number: "03",
           title: "Brole Mobile App",
           subTitle: "Mobile Design",
+          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
+          alt: "as",
         },
         {
           number: "04",
           title: "Bauhaus Studio",
           subTitle: "House Design",
+          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
+          alt: "as",
         },
       ],
     };
@@ -55,7 +62,6 @@ export default {
 .content {
   display: grid;
   gap: 40px;
-  margin-left: 70px;
 }
 .footer {
   display: grid;

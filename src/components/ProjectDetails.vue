@@ -5,7 +5,10 @@
     </div>
     <div class="project-content">
       <div class="project-title">
-        <span class="title">{{ project.title }}</span>
+        <div class="project-title-hr">
+          <span class="title">{{ project.title }}</span>
+          <hr />
+        </div>
       </div>
       <div class="project-sub-title">
         <span>{{ project.subTitle }}</span>
@@ -35,6 +38,12 @@ span {
   align-items: center;
   height: 100%;
 }
+hr {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1rem);
+  width: 0;
+}
 .project-details {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -44,8 +53,8 @@ span {
       opacity: 1;
       &.title {
         transition: all 0.4s ease-in 0s;
-        text-decoration: line-through;
-        text-decoration-thickness: 1px;
+        //text-decoration: line-through;
+        //text-decoration-thickness: 1px;
         cursor: pointer;
       }
     }
@@ -59,5 +68,17 @@ span {
   span {
     font-size: 5rem;
   }
+  &:hover {
+    hr {
+      width: 100%;
+      height: 1px;
+      transition: width 0.5s;
+      float: right;
+    }
+  }
+}
+.project-title-hr {
+  position: relative;
+  width: fit-content;
 }
 </style>

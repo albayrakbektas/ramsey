@@ -26,7 +26,7 @@ export default {
   box-sizing: border-box;
 }
 html {
-  font-size: 12px;
+  font-size: 14px !important;
   @media only screen and (min-width: 768px) {
     font-size: 13px;
   }
@@ -34,13 +34,30 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: #1b1b1b;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }
 body::-webkit-scrollbar {
   display: none;
+}
+h1 {
+  font-family: Montserrat, sans-serif;
+  font-size: 3.428rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-transform: none;
+  color: #fff;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -49,8 +66,22 @@ body::-webkit-scrollbar {
   max-height: calc(100vh - 70px);
   width: 100vw;
 }
+.content {
+  display: grid;
+  grid-column-gap: 0.2rem;
+  justify-content: start;
+  max-width: 1140px;
+  margin: auto;
+  width: 100%;
+}
+.section-display {
+  display: grid;
+  align-items: center;
+}
 a {
   text-decoration: none;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
   &:hover {
     text-decoration: underline;
     text-decoration-color: #ffffff;
@@ -66,43 +97,20 @@ a {
 .purple {
   color: #c32865;
 }
-.footer-position {
-  padding-top: 0 !important;
-}
-.container {
-  padding: 2rem 4rem;
-}
 .header-position {
   position: sticky;
   top: 0;
+  z-index: 10;
+}
+.container {
+  padding: 2rem 4rem;
 }
 .footer-position {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-}
-.bg-text {
-  z-index: 1;
-}
-.rotate-text {
-  position: absolute;
-  top: 70px;
-  left: 70px;
-  bottom: 0;
-  font-size: 11rem;
-  font-weight: bold;
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  /* Safari */
-  -webkit-transform: rotate(-90deg);
-  /* Firefox */
-  -moz-transform: rotate(-90deg);
-  /* IE */
-  -ms-transform: rotate(-90deg);
-  /* Opera */
-  -o-transform: rotate(-90deg);
-  color: #757575;
-  opacity: 0.1;
+  z-index: 10;
+  padding-top: 0 !important;
 }
 </style>

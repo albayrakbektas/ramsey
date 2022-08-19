@@ -4,11 +4,13 @@
       <p>© Ramsay 2020.</p>
     </div>
     <div class="right">
-      <a href="#">
-        <span>G</span>
-      </a>
-      <a href="#">
-        <span>L</span>
+      <a
+        v-for="(item, index) of iconList"
+        target="_blank"
+        :href="item.href"
+        :key="index"
+      >
+        <img :src="item.src" :alt="item.alt" />
       </a>
     </div>
   </div>
@@ -17,6 +19,37 @@
 <script>
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      iconList: [
+        {
+          href: "#",
+          src: require("../assets/footer-icons/twitter.png"),
+          alt: "twitter",
+        },
+        {
+          href: "#",
+          src: require("../assets/footer-icons/twitter.png"),
+          alt: "twitter",
+        },
+        {
+          href: "#",
+          src: require("../assets/footer-icons/twitter.png"),
+          alt: "twitter",
+        },
+        {
+          href: "#",
+          src: require("../assets/footer-icons/twitter.png"),
+          alt: "twitter",
+        },
+        {
+          href: "#",
+          src: require("../assets/footer-icons/twitter.png"),
+          alt: "twitter",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -26,5 +59,15 @@ export default {
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
   align-items: center;
+}
+img {
+  height: 1.5rem;
+  width: 1.5rem;
+  &:hover {
+    color: #c32865;
+  }
+}
+a {
+  padding-left: 2rem;
 }
 </style>

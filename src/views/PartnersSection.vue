@@ -80,9 +80,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  margin-left: 70px;
-}
 .logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

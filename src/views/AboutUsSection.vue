@@ -1,8 +1,7 @@
 <template>
   <div class="third-section">
-    <div class="bg-text">
-      <span class="rotate-text">about us</span>
-    </div>
+    <BgImage :bg-img="bgImg" />
+    <BgText text="about us" />
     <ExperienceCard />
     <div class="second-card">
       <BestWebSites />
@@ -13,11 +12,17 @@
 <script>
 import ExperienceCard from "@/components/ExperienceCard";
 import BestWebSites from "@/components/BestWebSites";
+import BgText from "@/components/BgText";
+import BgImage from "@/components/BgImage";
 export default {
   name: "FourthSection",
-  components: { BestWebSites, ExperienceCard },
+  components: { BgImage, BgText, BestWebSites, ExperienceCard },
   data() {
     return {
+      bgImg: {
+        src: require("../assets/section-bg-images/about-us.jpeg"),
+        alt: "about us background image",
+      },
       course: {
         title: "SPECIALIZATION COURSE",
         place: "University of studies, Poland, Cracow",
@@ -32,10 +37,8 @@ export default {
 
 <style lang="scss" scoped>
 .third-section {
-  display: grid;
   grid-template-columns: auto 1fr 1fr;
   grid-column-gap: 3rem;
-  align-items: center;
   justify-items: center;
 }
 .second-card {

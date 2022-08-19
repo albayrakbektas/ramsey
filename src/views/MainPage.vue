@@ -163,9 +163,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.back-section {
-  transform: translate3d(0px, -100%, 0px);
-}
 .sections {
   padding: 0 8rem;
   overflow-y: scroll;
@@ -176,14 +173,16 @@ export default {
 }
 .section {
   position: absolute;
-  height: calc(100vh - 70px - 2rem);
+  height: 100%;
   width: 100%;
   left: 0;
-  top: calc(70px + 2rem) !important;
+  top: 0;
   background-color: #1b1b1b;
   backface-visibility: hidden;
   transform: translate3d(0px, 0px, 0px);
   transition: all 1s cubic-bezier(0.55, 0.085, 0, 0.99);
+  display: grid;
+  align-items: center;
 }
 .w3-left,
 .w3-right,

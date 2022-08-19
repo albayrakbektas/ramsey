@@ -1,8 +1,7 @@
 <template>
-  <div class="con">
-    <div class="bg-text">
-      <span class="rotate-text">partners</span>
-    </div>
+  <div>
+    <BgImage :bg-img="bgImg" />
+    <BgText text="partners" />
     <div class="content slider">
       <ReviewCard
         class="review-card"
@@ -11,47 +10,23 @@
         :key="index"
       />
     </div>
-    <div class="content slider">
-      <ReviewCard
-        class="review-card"
-        v-for="(item, index) of secondReviewList"
-        :review="item"
-        :key="index"
-      />
-    </div>
-    <div class="content slider">
-      <ReviewCard
-        class="review-card"
-        v-for="(item, index) of thirdReviewList"
-        :review="item"
-        :key="index"
-      />
-    </div>
-    <!--    <div class="dots">-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(1)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(2)"-->
-    <!--      ></span>-->
-    <!--      <span-->
-    <!--        class="w3-badge demo w3-border w3-hover-white"-->
-    <!--        @click="currentDiv(3)"-->
-    <!--      ></span>-->
-    <!--    </div>-->
   </div>
 </template>
 
 <script>
 import ReviewCard from "@/components/ReviewCard";
+import BgText from "@/components/BgText";
+import BgImage from "@/components/BgImage";
 export default {
   name: "SeventhSection",
-  components: { ReviewCard },
+  components: { BgImage, BgText, ReviewCard },
   data() {
     return {
       slideIndex: 1,
+      bgImg: {
+        src: require("../assets/section-bg-images/reviews.jpeg"),
+        alt: "reviews background image",
+      },
       firstReviewList: [
         {
           title: "DAVID & ELISA",
@@ -96,47 +71,11 @@ export default {
       ],
     };
   },
-  // mounted() {
-  //   this.showDivs(this.slideIndex);
-  // },
-  methods: {
-    //   plusDivs(n) {
-    //     this.showDivs((this.slideIndex += n));
-    //   },
-    //   currentDiv(n) {
-    //     this.showDivs((this.slideIndex = n));
-    //   },
-    //   showDivs(n) {
-    //     let i;
-    //     let x = document.getElementsByClassName("slider");
-    //     let dots = document.getElementsByClassName("demo");
-    //     if (n > x.length) {
-    //       this.slideIndex = 1;
-    //     }
-    //     if (n < 1) {
-    //       this.slideIndex = x.length;
-    //     }
-    //     for (i = 0; i < x.length; i++) {
-    //       x[i].style.display = "none";
-    //     }
-    //     for (i = 0; i < dots.length; i++) {
-    //       dots[i].className = dots[i].className.replace(" active", "");
-    //     }
-    //     x[this.slideIndex - 1].style.display = "grid";
-    //     dots[this.slideIndex - 1].className += " active";
-    //   },
-  },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-.con {
-  display: none;
-}
-.content {
-  padding: 0 70px;
-  animation: ease 1s;
-}
 .w3-left,
 .w3-right,
 .w3-badge {

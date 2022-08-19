@@ -1,46 +1,58 @@
 <template>
   <div class="first-section">
+    <BgImage :bg-img="bgImage" />
     <div class="content">
-      <h1 class="purple">
-        <span>Howdy,</span>
-        <span> I'm</span>
-      </h1>
-      <br />
-      <h1>Ramsay</h1>
-    </div>
-    <div class="resume">
-      <hr />
-      <div class="play-circle">
-        <span class="material-symbols-outlined"> play_arrow </span>
+      <div class="content-top">
+        <h1>
+          <span>Howdy,</span>
+          I'm
+          <br />
+          Ramsay
+        </h1>
       </div>
-      <span class="watch-resume">Watch Resume</span>
+      <div class="content-bottom">
+        <hr />
+        <div class="play-circle">
+          <span class="material-symbols-outlined"> play_arrow </span>
+        </div>
+        <span class="watch-resume">Watch Resume</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import BgImage from "@/components/BgImage";
 export default {
   name: "FirstSection",
+  components: { BgImage },
+  data() {
+    return {
+      bgImage: {
+        src: require("../assets/section-bg-images/section-1-bg.jpeg"),
+        alt: "ramsay image",
+      },
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.first-section {
-  position: relative;
-}
 .content {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 0.2rem;
-  justify-content: start;
-  margin-top: 5rem;
+  grid-template-rows: auto auto;
 }
 h1 {
   font-size: 6.54rem;
   line-height: 1;
-  font-family: Montserrat, sans-serif;
   font-weight: 600;
-  span:first-child {
+  letter-spacing: -5.5px;
+  * {
+    font-size: 6.54rem;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -5.5px;
+  }
+  span {
     color: #c32865;
   }
 }
@@ -52,7 +64,7 @@ hr {
   left: 0;
   width: 5vw;
 }
-.resume {
+.content-bottom {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 1rem;

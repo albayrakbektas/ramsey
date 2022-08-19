@@ -54,5 +54,6 @@ a {
   font-size: 1.2rem;
   line-height: 1.8rem;
   text-align: left;
+  padding: 0 !important;
 }
 </style>

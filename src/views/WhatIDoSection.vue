@@ -1,8 +1,6 @@
 <template>
-  <div class="second-section">
-    <div class="bg-text">
-      <span class="rotate-text">What i do</span>
-    </div>
+  <div>
+    <BgText text="What i do" />
     <div class="main-content">
       <h1><span class="purple">My</span> specialization</h1>
       <div class="cards">
@@ -29,16 +27,14 @@
 
 <script>
 import SkillCard from "@/components/SkillCard";
+import BgText from "@/components/BgText";
 export default {
   name: "SecondSection",
-  components: { SkillCard },
+  components: { BgText, SkillCard },
 };
 </script>
 
 <style lang="scss" scoped>
-.second-section {
-  padding: 0 2rem;
-}
 h1 {
   font-size: 4rem;
 }
