@@ -1,10 +1,7 @@
 <template>
   <div id="header-container">
     <div>
-      <img
-        alt="Name logo"
-        src="http://paul-themes.com/wordpress/ramsay/wp-content/uploads/2020/01/logo.png"
-      />
+      <img alt="Name logo" src="../assets/brand-logo.png" />
     </div>
     <div class="mid">
       <a href="tel:+905050070844">
