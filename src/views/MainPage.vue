@@ -13,40 +13,40 @@
     </div>
     <div class="dots">
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(1)"
+        class="w3-badge demo w3-border w3-hover-white one active-dot"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(2)"
+        class="w3-badge demo w3-border w3-hover-white two"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(3)"
+        class="w3-badge demo w3-border w3-hover-white three"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(4)"
+        class="w3-badge demo w3-border w3-hover-white four"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(5)"
+        class="w3-badge demo w3-border w3-hover-white five"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(6)"
+        class="w3-badge demo w3-border w3-hover-white six"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(7)"
+        class="w3-badge demo w3-border w3-hover-white seven"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(8)"
+        class="w3-badge demo w3-border w3-hover-white eight"
+        @click="dotEvent"
       ></span>
       <span
-        class="w3-badge demo w3-border w3-hover-white"
-        @click="currentDiv(9)"
+        class="w3-badge demo w3-border w3-hover-white nine"
+        @click="dotEvent"
       ></span>
     </div>
   </div>
@@ -85,6 +85,23 @@ export default {
     document.addEventListener("wheel", this.handleWheel);
   },
   methods: {
+    dotEvent(e) {
+      const activeDot = document.querySelector(".active-dot");
+      const dots = document.querySelectorAll(".demo");
+      let index = Array.from(dots).indexOf(e.target);
+      activeDot.classList.remove("active-dot");
+      e.target.classList.add("active-dot");
+      const sections = document.querySelectorAll(".section");
+      const activeSection = document.querySelector(".active-section");
+      sections.forEach((e) => {
+        e.style.transform = "translate3d(0px, 0px, 0px)";
+      });
+      for (let i = 0; i < index; i++) {
+        sections[i].style.transform = "translate3d(0px, -100vh, 0px)";
+      }
+      activeSection.classList.remove("active-section");
+      sections[index].classList.add("active-section");
+    },
     handleWheel(e) {
       if (this.counter > 0) {
         return;
@@ -97,23 +114,43 @@ export default {
         : null;
       let prevSibling = activeSection.previousElementSibling;
       activeSection.classList.remove("active-section");
+
+      let activeClass = activeSection.id;
+      let firstDot = document.querySelector(".one");
+      let dots = document.querySelectorAll(".demo");
+      let activeDot = document.querySelector(`.${activeClass}`);
+      let nextDotSibling = activeDot.nextElementSibling
+        ? activeDot.nextElementSibling
+        : null;
+      let prevDotSibling = activeDot.previousElementSibling;
+      activeDot.classList.remove("active-dot");
+
       if (e.deltaY > 0) {
-        if (activeSection.id === "eight") {
+        if (activeSection.id === "nine") {
           sections.forEach((e) => {
             e.style.transform = "translate3d(0px, 0%, 0px)";
           });
+          dots.forEach((e) => {
+            e.classList.remove("active-dot");
+          });
           firstSection.classList.add("active-section");
+          firstDot.classList.add("active-dot");
         } else {
           activeSection.style.transform = "translate3d(0px, -100vh, 0px)";
           nextSibling.classList.add("active-section");
+          activeDot.nextElementSibling.classList.add("active-dot");
+          nextDotSibling.classList.add("active-dot");
         }
       } else if (e.deltaY < 0) {
-        console.log(activeSection.id);
         if (activeSection.id === "one") {
           activeSection.classList.add("active-section");
+          activeDot.classList.add("active-dot");
+          nextDotSibling.classList.remove("active-dot");
         } else {
           prevSibling.classList.add("active-section");
           prevSibling.style.transform = "translate3d(0px, 0px, 0px)";
+          prevDotSibling.classList.add("active-dot");
+          nextDotSibling.classList.remove("active-dot");
         }
       }
       this.counter++;
@@ -168,6 +205,11 @@ export default {
   right: calc(5rem - (13px / 2));
   top: calc(50% - 6rem);
   z-index: 99;
+}
+.active-dot {
+  background-color: #c32865;
+  height: 12px;
+  width: 12px;
 }
 .w3-transparent {
   background-color: unset !important;
