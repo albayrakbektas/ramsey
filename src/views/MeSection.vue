@@ -41,6 +41,13 @@ export default {
 .content {
   grid-template-rows: auto auto;
 }
+.content-top {
+  margin-top: 8rem;
+}
+.content-top,
+.content-bottom {
+  margin-left: 2rem;
+}
 h1 {
   font-size: 6.54rem;
   line-height: 1;
@@ -62,7 +69,7 @@ h1 {
 hr {
   position: fixed;
   left: 0;
-  width: 5vw;
+  width: 10vw;
 }
 .content-bottom {
   display: grid;
@@ -72,7 +79,7 @@ hr {
   cursor: pointer;
   height: min-content;
   width: min-content;
-  margin-top: 5rem;
+  margin-top: 2rem;
   &:hover {
     .material-symbols-outlined,
     .watch-resume {
@@ -94,8 +101,8 @@ hr {
   color: #c32865;
 }
 .play-circle {
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 70px;
   border: 1px solid #ffffff;
   border-radius: 50%;
   display: grid;

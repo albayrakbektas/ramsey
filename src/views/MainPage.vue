@@ -194,21 +194,21 @@ export default {
   width: 8px;
   padding: 0;
   margin: auto;
+  background-color: #fff;
 }
 .dots {
   display: grid;
   grid-template-rows: repeat(9, 1fr);
-  justify-self: center;
-  gap: 1rem;
+  gap: 2rem;
   position: absolute;
-  right: calc(5rem - (13px / 2));
-  top: calc(50% - 6rem);
+  right: calc(5rem + 6.4px);
+  top: calc(50% - 11rem);
   z-index: 99;
 }
 .active-dot {
   background-color: #c32865;
-  height: 12px;
-  width: 12px;
+  height: 12.8px;
+  width: 12.8px;
 }
 .w3-transparent {
   background-color: unset !important;
