@@ -12,7 +12,8 @@
     </div>
     <div>
       <div>
-        <span class="material-symbols-outlined menu-icon"> menu </span>
+        <!--        <span class="material-symbols-outlined "> menu </span>-->
+        <i class="fa-regular fa-bars menu-icon"></i>
       </div>
     </div>
   </div>
@@ -52,6 +53,8 @@ img {
   cursor: pointer;
   font-size: 24px;
   font-weight: bolder;
+  color: #fff;
+  transition: all 0.2s ease-in 0s;
   &:hover {
     color: #c32865;
   }

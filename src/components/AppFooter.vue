@@ -10,7 +10,7 @@
         :href="item.href"
         :key="index"
       >
-        <img :src="item.src" :alt="item.alt" />
+        <i :class="item.src"></i>
       </a>
     </div>
   </div>
@@ -24,27 +24,27 @@ export default {
       iconList: [
         {
           href: "#",
-          src: require("../assets/footer-icons/twitter.png"),
+          src: "fa-brands fa-twitter",
           alt: "twitter",
         },
         {
           href: "#",
-          src: require("../assets/footer-icons/twitter.png"),
+          src: "fa-brands fa-facebook-f",
           alt: "twitter",
         },
         {
           href: "#",
-          src: require("../assets/footer-icons/twitter.png"),
+          src: "fa-brands fa-google-plus-g",
           alt: "twitter",
         },
         {
           href: "#",
-          src: require("../assets/footer-icons/twitter.png"),
+          src: "fa-brands fa-linkedin",
           alt: "twitter",
         },
         {
           href: "#",
-          src: require("../assets/footer-icons/twitter.png"),
+          src: "fa-solid fa-basketball",
           alt: "twitter",
         },
       ],
@@ -60,9 +60,14 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-img {
-  height: 1.5rem;
-  width: 1.5rem;
+.right {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease-out;
   &:hover {
     color: #c32865;
   }
