@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="sections" @click="handleWheel">
+    <div class="sections" @wheel="handleWheel">
       <FirstSection id="one" class="section active-section" />
       <SecondSection id="two" class="section" />
       <ThirdSection id="three" class="section" />
@@ -86,6 +86,9 @@ export default {
   },
   methods: {
     dotEvent(e) {
+      if (this.$store.state.isMenuOpen) {
+        return;
+      }
       const activeDot = document.querySelector(".active-dot");
       const dots = document.querySelectorAll(".demo");
       let index = Array.from(dots).indexOf(e.target);
@@ -103,6 +106,9 @@ export default {
       sections[index].classList.add("active-section");
     },
     handleWheel(e) {
+      if (this.$store.state.isMenuOpen) {
+        return;
+      }
       if (this.counter > 0) {
         return;
       }
