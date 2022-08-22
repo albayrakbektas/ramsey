@@ -7,6 +7,12 @@
     <div class="footer-position container">
       <AppFooter />
     </div>
+    <div
+      @click="closeMenu"
+      v-if="this.$store.state.isMenuOpen"
+      class="full-width-absolute"
+    ></div>
+    <MainMenu />
   </div>
 </template>
 
@@ -14,9 +20,17 @@
 import MainPage from "@/views/MainPage";
 import AppHeader from "@/components/AppHeader";
 import AppFooter from "@/components/AppFooter";
+import MainMenu from "@/components/MainMenu";
 export default {
   name: "App",
-  components: { AppFooter, AppHeader, MainPage },
+  components: { MainMenu, AppFooter, AppHeader, MainPage },
+  methods: {
+    closeMenu() {
+      this.$store.state.isMenuOpen = false;
+      document.querySelector(".main-menu").classList.remove("opened-menu");
+      document.querySelector(".main-menu").classList.add("closed-menu");
+    },
+  },
 };
 </script>
 
@@ -112,5 +126,35 @@ a {
   right: 0;
   z-index: 10;
   padding-top: 0 !important;
+}
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+i {
+  cursor: pointer;
+}
+.icon-link {
+  color: #757575;
+}
+.full-width-absolute {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 110;
+}
+.closed-menu {
+  transform: translateX(100%) !important;
+  width: 0 !important;
+}
+.opened-menu {
+  transform: translateX(0) !important;
+  width: 34% !important;
 }
 </style>
