@@ -26,6 +26,9 @@ export default {
       this.$store.state.isMenuOpen = true;
       document.querySelector(".main-menu").classList.remove("closed-menu");
       document.querySelector(".main-menu").classList.add("opened-menu");
+      setTimeout(() => {}, 1000);
+      document.querySelector("nav").style.transform = "translateY(0)";
+      document.querySelector(".menu-footer").style.transform = "translateY(0)";
     },
   },
 };

@@ -20,7 +20,7 @@
     </nav>
     <div class="menu-footer">
       <FooterIcons />
-      <p>© Robert 2020. All Rights Reseverd.</p>
+      <p>© Robert 2020. All Rights Reserved.</p>
     </div>
   </div>
 </template>
@@ -50,11 +50,11 @@ export default {
           href: "#",
         },
         {
-          text: "Partners",
+          text: "Projects",
           href: "#",
         },
         {
-          text: "Projects",
+          text: "Partners",
           href: "#",
         },
         {
@@ -77,6 +77,9 @@ export default {
       this.$store.state.isMenuOpen = false;
       document.querySelector(".main-menu").classList.remove("opened-menu");
       document.querySelector(".main-menu").classList.add("closed-menu");
+      document.querySelector("nav").style.transform = "translateY(100px)";
+      document.querySelector(".menu-footer").style.transform =
+        "translateY(100px)";
     },
     changeSection(e) {
       this.closeMenu();
@@ -106,6 +109,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+nav,
+.menu-footer {
+  transform: translateY(100px);
+}
 .main-menu {
   position: fixed;
   top: 0;
@@ -113,12 +120,12 @@ export default {
   right: 0;
   width: 0;
   background-color: #1b1b1b;
-  padding: 3rem 4rem;
+  padding: 3rem 4.5rem;
   display: grid;
   align-items: center;
   transform: translateX(100%);
-  transition: linear 500ms;
-  -webkit-transition: linear 500ms;
+  transition: linear 300ms;
+  -webkit-transition: linear 300ms;
   z-index: 111;
 }
 nav {
@@ -126,6 +133,8 @@ nav {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: 1s;
+  -webkit-transition: 1s;
 }
 ul {
   padding-inline-start: 0 !important;
@@ -163,9 +172,15 @@ a {
   display: grid;
   grid-template-rows: repeat(2, auto);
   width: 60%;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  transition: linear 2s;
+  -webkit-transition: linear 2s;
   * {
     padding-bottom: 2rem;
+  }
+  p {
+    //margin-block-end
   }
 }
 p {

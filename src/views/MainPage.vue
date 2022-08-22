@@ -144,7 +144,7 @@ export default {
         } else {
           activeSection.style.transform = "translate3d(0px, -100vh, 0px)";
           nextSibling.classList.add("active-section");
-          activeDot.nextElementSibling.classList.add("active-dot");
+          // activeDot.nextElementSibling.classList.add("active-dot");
           nextDotSibling.classList.add("active-dot");
         }
       } else if (e.deltaY < 0) {
