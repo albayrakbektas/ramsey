@@ -5,7 +5,6 @@
     </div>
     <div class="resume-content">
       <CourseCard :course="course" />
-      <hr />
       <CourseCard :course="course" />
     </div>
   </div>
@@ -34,6 +33,9 @@ export default {
   position: relative;
   padding: 3.75rem;
   background-color: rgba(255, 255, 255, 0.1);
+  &:hover {
+    background-color: #c32865;
+  }
 }
 .resume-type {
   position: absolute;

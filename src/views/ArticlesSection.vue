@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div class="bg-text">
-      <span class="rotate-text">articles</span>
-    </div>
+  <div class="container">
+    <BgText text="articles" />
     <div class="content">
       <div>
         <h1><span>Recent</span> news</h1>
@@ -14,19 +12,20 @@
           :key="index"
         />
       </div>
-    </div>
-    <div class="footer">
-      <hr />
-      <span> View all posts </span>
+      <div class="footer">
+        <hr class="hr" />
+        <span class="h2"> View all posts </span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ArticleCard from "@/components/ArticleCard";
+import BgText from "@/components/BgText";
 export default {
   name: "ArticlesSection",
-  components: { ArticleCard },
+  components: { BgText, ArticleCard },
   data() {
     return {
       isHover: false,
@@ -59,8 +58,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.rotate-text {
-  margin-left: 40px;
+.content {
+  padding: 0 8rem !important;
+  margin: 0;
 }
 h1 {
   padding: 40px 0;
@@ -71,28 +71,28 @@ h1 {
 }
 .article-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   grid-template-columns: repeat(3, 1fr);
+  width: 70%;
 }
 .footer {
   display: grid;
   gap: 2vw;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
   width: 100vw;
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  hr {
-    margin: 0;
-  }
-  span {
-    font-size: 1.8rem;
-    &:hover {
-      color: #c32865;
-      cursor: pointer;
-    }
+  margin-top: 2rem;
+  //position: fixed;
+  //z-index: 10;
+  //bottom: 70px;
+  //left: 0;
+}
+.h2 {
+  padding-left: 0;
+  justify-self: start;
+  &:hover {
+    color: #c32865;
+    cursor: pointer;
   }
 }
 </style>

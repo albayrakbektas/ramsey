@@ -5,14 +5,11 @@
       <div>
         <h1><span>Trusted</span> from Clients</h1>
       </div>
-      <div class="logo-grid">
-        <img
-          v-for="(item, index) of logoList"
-          :src="item.url"
-          :alt="item.alt"
-          :key="index"
-        />
-      </div>
+      <ul class="logo-grid">
+        <li v-for="(item, index) of logoList" :key="index">
+          <img :src="item.url" :alt="item.alt" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -80,14 +77,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content {
+  padding: 0 70px !important;
+}
 .logo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 50px;
-  margin-top: 50px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  grid-gap: 5rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  grid-template-columns: repeat(4, 1fr);
 }
 h1 {
   padding: 40px 0;

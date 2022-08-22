@@ -44,8 +44,10 @@ span::after {
 }
 p {
   color: #888888;
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 2;
+  letter-spacing: 0.1em;
+  font-weight: 400;
   font-family: Poppins, sans-serif;
 }
 </style>

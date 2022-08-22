@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contact-container">
     <BgImage :bg-img="bgImg" />
     <BgText text="contact" />
     <div class="content">
@@ -29,10 +29,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact-container {
+  display: grid;
+  align-content: center;
+}
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 70px;
+  padding: 0 70px !important;
 }
 .rotate-text {
   margin-left: 40px;

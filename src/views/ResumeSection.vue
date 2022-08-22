@@ -36,11 +36,12 @@ export default {
 
 <style lang="scss" scoped>
 .third-section {
-  grid-column-gap: 3rem;
   overflow-y: scroll;
 }
 .content {
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 10rem;
   :nth-last-child(1) {
     margin-top: 2rem;
   }

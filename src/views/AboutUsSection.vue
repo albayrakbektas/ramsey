@@ -2,9 +2,13 @@
   <div class="third-section">
     <BgImage :bg-img="bgImg" />
     <BgText text="about us" />
-    <ExperienceCard />
-    <div class="second-card">
-      <BestWebSites />
+    <div class="content">
+      <div class="card-container">
+        <ExperienceCard />
+      </div>
+      <div class="second-card">
+        <BestWebSites />
+      </div>
     </div>
   </div>
 </template>
@@ -37,8 +41,17 @@ export default {
 
 <style lang="scss" scoped>
 .third-section {
-  grid-template-columns: auto 1fr 1fr;
-  grid-column-gap: 3rem;
+  //grid-template-columns: auto 1fr 1fr;
+  //grid-column-gap: 3rem;
+  justify-items: center;
+}
+.content {
+  grid-template-columns: 1fr 1fr;
+  padding-left: 0;
+  height: auto;
+}
+.card-container {
+  display: grid;
   justify-items: center;
 }
 .second-card {

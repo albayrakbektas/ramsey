@@ -24,6 +24,11 @@ import MainMenu from "@/components/MainMenu";
 export default {
   name: "App",
   components: { MainMenu, AppFooter, AppHeader, MainPage },
+  mounted() {
+    document.querySelectorAll(".hr").forEach((e) => {
+      e.style.width = "10vw";
+    });
+  },
   methods: {
     closeMenu() {
       this.$store.state.isMenuOpen = false;
@@ -87,6 +92,7 @@ h1 {
   max-width: 1140px;
   margin: auto;
   width: 100%;
+  padding-left: 11rem;
 }
 .section-display {
   display: grid;
@@ -156,5 +162,23 @@ i {
 .opened-menu {
   transform: translateX(0) !important;
   width: 34% !important;
+}
+.bottom-link {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  position: relative;
+  margin-top: 3rem;
+}
+.hr {
+  width: 0;
+  transition: width 1s;
+  float: left;
+  position: fixed;
+  left: 0;
+}
+.h2 {
+  padding-left: calc(8vw);
+  font-size: 1.3rem;
 }
 </style>

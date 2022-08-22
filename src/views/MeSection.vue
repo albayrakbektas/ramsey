@@ -11,7 +11,7 @@
         </h1>
       </div>
       <div class="content-bottom">
-        <hr />
+        <hr class="hr" />
         <div class="play-circle">
           <span class="material-symbols-outlined"> play_arrow </span>
         </div>
@@ -40,13 +40,10 @@ export default {
 <style lang="scss" scoped>
 .content {
   grid-template-rows: auto auto;
+  padding-left: 2rem !important;
 }
 .content-top {
-  margin-top: 8rem;
-}
-.content-top,
-.content-bottom {
-  margin-left: 2rem;
+  margin-top: 6rem;
 }
 h1 {
   font-size: 6.54rem;
@@ -66,11 +63,7 @@ h1 {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-hr {
-  position: fixed;
-  left: 0;
-  width: 10vw;
-}
+
 .content-bottom {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -80,6 +73,7 @@ hr {
   height: min-content;
   width: min-content;
   margin-top: 2rem;
+  padding-top: 2rem;
   &:hover {
     .material-symbols-outlined,
     .watch-resume {

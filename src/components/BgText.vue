@@ -15,26 +15,32 @@ export default {
 
 <style lang="scss" scoped>
 .bg-text {
-  z-index: 1;
+  font-size: 9.16667rem;
+  font-weight: 600;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 7.91667rem;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  text-transform: lowercase;
+  opacity: 0.05;
+  color: #fff;
 }
 .rotate-text {
   position: absolute;
-  top: 70px;
-  left: 70px;
-  bottom: 0;
-  font-size: 11rem;
-  font-weight: bold;
-  transform-origin: 50% 50%;
-  transform: rotate(-90deg);
-  /* Safari */
-  -webkit-transform: rotate(-90deg);
-  /* Firefox */
-  -moz-transform: rotate(-90deg);
-  /* IE */
-  -ms-transform: rotate(-90deg);
-  /* Opera */
-  -o-transform: rotate(-90deg);
-  color: #757575;
-  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s 0.6s ease-out;
+  transition: all 0.5s 0.6s ease-out;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+  -ms-transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+  letter-spacing: 0;
+  opacity: 1;
 }
 </style>

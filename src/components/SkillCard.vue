@@ -4,7 +4,7 @@
     <h4>
       <a href="#">{{ skillTitle }}</a>
     </h4>
-    <p class="content">{{ skillContent }}</p>
+    <p class="text">{{ skillContent }}</p>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ a {
     text-decoration: none;
   }
 }
-.content {
+.text {
   color: #888888;
   font-weight: 400;
   font-size: 1.2rem;

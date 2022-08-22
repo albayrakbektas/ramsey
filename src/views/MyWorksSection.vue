@@ -60,8 +60,8 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  display: grid;
   gap: 40px;
+  padding: 0 70px !important;
 }
 .footer {
   display: grid;
@@ -77,6 +77,6 @@ hr {
   margin: 0;
 }
 span {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 </style>

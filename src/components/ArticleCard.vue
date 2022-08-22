@@ -17,7 +17,7 @@
     <div class="content-bottom">
       <span class="text">{{ article.content }}</span>
     </div>
-    <div :class="{ 'div-hover': hover }" class="hr"></div>
+    <div :class="{ 'div-hover': hover }" class="hr-scoped"></div>
   </div>
 </template>
 
@@ -81,7 +81,7 @@ export default {
     cursor: pointer;
   }
 }
-.hr {
+.hr-scoped {
   width: 0;
   height: 1px;
   background-color: #ffffff;

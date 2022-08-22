@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <BgText text="What i do" />
-    <div class="main-content">
+    <div class="content main-content">
       <h1><span class="purple">My</span> specialization</h1>
       <div class="cards">
         <SkillCard
@@ -20,7 +20,10 @@
           skill-title="ILLUSTRATION"
         />
       </div>
-      <h2>Download Resume</h2>
+    </div>
+    <div class="bottom-link">
+      <hr class="hr" />
+      <h2 class="h2">Download Resume</h2>
     </div>
   </div>
 </template>
@@ -31,10 +34,16 @@ import BgText from "@/components/BgText";
 export default {
   name: "SecondSection",
   components: { BgText, SkillCard },
+  created() {
+    // document.querySelector(".hr").classList.add("active");
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.section {
+  align-content: center;
+}
 h1 {
   font-size: 4rem;
 }
@@ -46,16 +55,19 @@ h1 {
 }
 h2 {
   cursor: pointer;
-  padding-top: 2rem;
   z-index: 2;
   width: min-content;
   white-space: nowrap;
+  align-self: end;
   &:hover {
     color: #c32865;
   }
 }
 .main-content {
   padding: 0 70px;
+  margin-top: 70px;
   position: relative;
+  grid-template-rows: auto 1fr;
+  align-items: end;
 }
 </style>
