@@ -12,8 +12,7 @@
     </div>
     <div>
       <div>
-        <!--        <span class="material-symbols-outlined "> menu </span>-->
-        <i class="fa-regular fa-bars menu-icon"></i>
+        <i @click="openMenu" class="fa-regular fa-bars menu-icon"></i>
       </div>
     </div>
   </div>
@@ -22,6 +21,13 @@
 <script>
 export default {
   name: "AppHeader",
+  methods: {
+    openMenu() {
+      this.$store.state.isMenuOpen = true;
+      document.querySelector(".main-menu").classList.remove("closed-menu");
+      document.querySelector(".main-menu").classList.add("opened-menu");
+    },
+  },
 };
 </script>
 
