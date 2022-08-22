@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div class="bg-text">
-      <span class="rotate-text">partners</span>
-    </div>
+    <BgText text="partners" />
     <div class="content">
       <div>
         <h1><span>Trusted</span> from Clients</h1>
@@ -20,8 +18,10 @@
 </template>
 
 <script>
+import BgText from "@/components/BgText";
 export default {
   name: "SixthSection",
+  components: { BgText },
   data() {
     return {
       logoList: [
