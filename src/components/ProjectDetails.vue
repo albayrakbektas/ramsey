@@ -6,7 +6,7 @@
     <div class="project-content">
       <div class="project-title">
         <div class="project-title-hr">
-          <span class="title">{{ project.title }}</span>
+          <span @mouseover="changeBg" class="title">{{ project.title }}</span>
           <hr />
         </div>
       </div>
@@ -24,6 +24,27 @@ export default {
     project: {
       type: Object,
       required: true,
+    },
+  },
+  mounted() {
+    document
+      .querySelector(".project-title-hr > span.title")
+      .classList.add("active-item");
+    document.querySelector(".project-title-hr > hr").classList.add("active-hr");
+  },
+  methods: {
+    changeBg(e) {
+      const item = document.querySelector(".active-item");
+      item.classList.remove("active-item");
+      item.nextElementSibling.classList.remove("active-hr");
+      e.target.classList.add("active-item");
+      e.target.nextElementSibling.classList.add("active-hr");
+      const items = document.querySelectorAll(".project-title-hr > .title");
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].className === "title active-item") {
+          this.$store.state.bgImgIndex = i;
+        }
+      }
     },
   },
 };
@@ -47,18 +68,20 @@ hr {
 .project-details {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  &:hover {
-    span {
-      transition: all 0.4s ease-in 0s;
-      opacity: 1;
-      &.title {
-        transition: all 0.4s ease-in 0s;
-        //text-decoration: line-through;
-        //text-decoration-thickness: 1px;
-        cursor: pointer;
-      }
-    }
-  }
+}
+.active-item {
+  transition: all 0.4s ease-in 0s;
+  opacity: 1;
+}
+.title {
+  transition: all 0.4s ease-in 0s;
+  cursor: pointer;
+}
+.active-hr {
+  width: 100%;
+  height: 1px;
+  transition: width 0.5s;
+  float: right;
 }
 .project-content {
   display: grid;
@@ -67,14 +90,6 @@ hr {
 .project-title {
   span {
     font-size: 5rem;
-  }
-  &:hover {
-    hr {
-      width: 100%;
-      height: 1px;
-      transition: width 0.5s;
-      float: right;
-    }
   }
 }
 .project-title-hr {

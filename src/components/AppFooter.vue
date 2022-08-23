@@ -24,6 +24,7 @@ export default {
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
   align-items: center;
+  height: 62.2px;
 }
 .right {
   display: grid;

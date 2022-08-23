@@ -37,18 +37,23 @@ export default {
 <style lang="scss" scoped>
 .third-section {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .content {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 10rem;
+  margin-bottom: 5rem;
   :nth-last-child(1) {
     margin-top: 2rem;
   }
 }
+.bg-img {
+  height: calc(100% + 15rem);
+}
 ResumeCard {
   margin-top: 2rem;
-  display: none;
+  //display: none;
 }
 .second-card {
   padding-top: 2rem;

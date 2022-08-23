@@ -30,14 +30,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.review {
+  margin-left: 20px;
+}
 .content {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  padding: 70px 0;
+  padding: 20px 0 40px;
 }
 .content-left,
 .content-right {
-  padding: 0 10px;
+  padding: 0;
 }
 .title {
   font-size: 1.6rem;
@@ -52,9 +55,10 @@ export default {
 }
 .text {
   font-size: 1.4rem;
-  line-height: 2;
+  line-height: 1.7;
   font-weight: 300;
   letter-spacing: 0.11em;
   font-family: Poppins, sans-serif;
+  padding-right: 30px;
 }
 </style>

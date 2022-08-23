@@ -33,6 +33,7 @@ export default {
   position: relative;
   padding: 3.75rem;
   background-color: rgba(255, 255, 255, 0.1);
+  height: fit-content;
   &:hover {
     background-color: #c32865;
   }

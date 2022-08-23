@@ -1,14 +1,40 @@
 <template>
-  <div>
+  <div class="reviews">
     <BgImage :bg-img="bgImg" />
-    <BgText text="partners" />
-    <div class="content slider">
-      <ReviewCard
-        class="review-card"
-        v-for="(item, index) of firstReviewList"
-        :review="item"
+    <BgText text="reviews" />
+    <div class="content reviews-slider">
+      <div class="slider-container">
+        <ReviewCard
+          class="review-card"
+          v-for="(item, index) of firstReviewList"
+          :review="item"
+          :key="index"
+        />
+      </div>
+      <div class="slider-container">
+        <ReviewCard
+          class="review-card"
+          v-for="(item, index) of secondReviewList"
+          :review="item"
+          :key="index"
+        />
+      </div>
+      <div class="slider-container">
+        <ReviewCard
+          class="review-card"
+          v-for="(item, index) of thirdReviewList"
+          :review="item"
+          :key="index"
+        />
+      </div>
+    </div>
+    <div class="reviews-dots">
+      <span
+        @click="changeSlide"
+        v-for="index in 3"
+        class="reviews-dot"
         :key="index"
-      />
+      ></span>
     </div>
   </div>
 </template>
@@ -20,6 +46,26 @@ import BgImage from "@/components/BgImage";
 export default {
   name: "SeventhSection",
   components: { BgImage, BgText, ReviewCard },
+  mounted() {
+    document.querySelector(".slider-container").classList.add("active-slide");
+    document.querySelector(".reviews-dot").classList.add("active-reviews-dot");
+    // this.changeSlide();
+  },
+  methods: {
+    changeSlide(e) {
+      const slides = document.querySelectorAll(".slider-container");
+      const dots = document.querySelectorAll(".reviews-dot");
+      const index = Array.from(dots).indexOf(e.target);
+      slides.forEach((e) => {
+        e.classList.remove("active-slide");
+      });
+      slides[index].classList.add("active-slide");
+      dots.forEach((e) => {
+        e.classList.remove("active-reviews-dot");
+      });
+      dots[index].classList.add("active-reviews-dot");
+    },
+  },
   data() {
     return {
       slideIndex: 1,
@@ -71,38 +117,57 @@ export default {
       ],
     };
   },
-  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-.w3-left,
-.w3-right,
-.w3-badge {
-  cursor: pointer;
+.reviews {
+  display: grid;
 }
-.w3-badge {
+.content {
+  padding-left: unset !important;
+  margin-top: 11rem;
+}
+.reviews-slider {
+  display: flex;
+  overflow-x: auto;
+}
+.slider-container {
+  display: none;
+  left: 0;
+}
+.active-slide {
+  display: block;
+}
+@keyframes fade {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.reviews-dots {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  margin-bottom: 10rem;
+}
+.reviews-dot {
+  cursor: pointer;
   height: 8px;
   width: 8px;
-  padding: 0;
-  margin: auto;
+  margin: 0 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  z-index: 202;
 }
-.dots {
-  display: grid;
-  justify-self: center;
-  gap: 1rem;
-  position: absolute;
-  right: 50%;
-  bottom: 0;
-  z-index: 5;
-  transform: rotate(90deg);
-}
-.w3-transparent {
-  background-color: unset !important;
-}
-.active {
-  color: #c32865;
-  background: #c32865;
+.active-reviews-dot {
+  background-color: #c32865;
   height: 13px;
   width: 13px;
 }

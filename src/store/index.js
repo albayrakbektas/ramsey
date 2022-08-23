@@ -33,6 +33,25 @@ export default new Vuex.Store({
         alt: "twitter",
       },
     ],
+    bgImgIndex: 0,
+    bgImgList: [
+      {
+        src: require("../assets/section-bg-images/works-bg_1.jpeg"),
+        alt: "as",
+      },
+      {
+        src: require("../assets/section-bg-images/works-bg_2.jpeg"),
+        alt: "as",
+      },
+      {
+        src: require("../assets/section-bg-images/works-bg_3.jpeg"),
+        alt: "as",
+      },
+      {
+        src: require("../assets/section-bg-images/works-bg_4.jpeg"),
+        alt: "as",
+      },
+    ],
   },
   getters: {},
   mutations: {},

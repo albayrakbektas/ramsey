@@ -181,4 +181,10 @@ i {
   padding-left: calc(8vw);
   font-size: 1.3rem;
 }
+::-webkit-scrollbar {
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c32865;
+}
 </style>

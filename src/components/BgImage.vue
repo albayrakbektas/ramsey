@@ -22,7 +22,8 @@ export default {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 img {
   object-fit: fill;

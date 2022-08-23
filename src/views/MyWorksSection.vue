@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <BgText text="my works" />
-    <div class="content">
-      <ProjectDetails
-        v-for="(item, index) of projects"
-        :project="item"
-        :key="index"
-      />
-    </div>
-    <div class="footer">
-      <hr />
-      <span> View all projects </span>
+  <div class="container-xy">
+    <div class="container-y">
+      <BgImage :bg-img="$store.state.bgImgList[$store.state.bgImgIndex]" />
+      <BgText text="my works" />
+      <div class="content">
+        <div v-for="(item, index) of projects" :key="index">
+          <ProjectDetails :project="item" />
+        </div>
+      </div>
+      <div class="footer">
+        <hr />
+        <span> View all projects </span>
+      </div>
     </div>
   </div>
 </template>
@@ -18,39 +19,36 @@
 <script>
 import ProjectDetails from "@/components/ProjectDetails";
 import BgText from "@/components/BgText";
+import BgImage from "@/components/BgImage";
 export default {
   name: "FifthSection",
-  components: { BgText, ProjectDetails },
+  components: { BgImage, BgText, ProjectDetails },
+  mounted() {
+    console.log(window.scrollX);
+  },
   data() {
     return {
+      slideIndex: 0,
       projects: [
         {
           number: "01",
           title: "Abstract Skat",
           subTitle: "Illustration",
-          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
-          alt: "as",
         },
         {
           number: "02",
           title: "Borato Prism",
           subTitle: "Branding",
-          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
-          alt: "as",
         },
         {
           number: "03",
           title: "Brole Mobile App",
           subTitle: "Mobile Design",
-          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
-          alt: "as",
         },
         {
           number: "04",
           title: "Bauhaus Studio",
           subTitle: "House Design",
-          src: require("../assets/section-bg-images/resume-bg_1.jpeg"),
-          alt: "as",
         },
       ],
     };
@@ -59,24 +57,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container-xy {
+  height: 100%;
+  overflow-y: hidden;
+}
+.container-y {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
 .content {
   gap: 40px;
-  padding: 0 70px !important;
+  padding: 0 !important;
+  margin-top: 8rem;
 }
 .footer {
   display: grid;
   gap: 2vw;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
   width: 100vw;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  padding: 2rem 0 4rem;
+}
+.footer-position {
+  height: 62.2px;
+}
+.bg-img {
+  height: calc(100vh + 63px);
+  width: calc(100vw - 8px);
 }
 hr {
   margin: 0;
+  width: 22vw;
 }
 span {
   font-size: 1.2rem;
+  cursor: pointer;
+  &:hover {
+    color: #c32865;
+  }
 }
 </style>

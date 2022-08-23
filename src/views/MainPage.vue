@@ -112,6 +112,9 @@ export default {
       if (this.counter > 0) {
         return;
       }
+      if (e.deltaX != 0) {
+        return;
+      }
       let firstSection = document.querySelector("#one");
       let sections = document.querySelectorAll(".section");
       let activeSection = document.querySelector(".active-section");
