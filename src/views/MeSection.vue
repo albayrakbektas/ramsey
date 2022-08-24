@@ -4,7 +4,7 @@
     <div class="content">
       <div class="content-top">
         <h1>
-          <span>Howdy,</span>
+          <span>Howdy,</span> <br v-if="$store.state.isMobileView" />
           I'm
           <br />
           Ramsay
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto !important;
   padding-left: 2rem !important;
 }
 .content-top {
@@ -102,5 +102,27 @@ h1 {
   display: grid;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 5.55rem !important;
+    * {
+      font-size: 5.55rem !important;
+    }
+  }
+  .hr {
+    width: 5vw !important;
+    margin-top: 3.5rem !important;
+  }
+  .play-circle {
+    height: 60px !important;
+    width: 60px !important;
+  }
+  .watch-resume {
+    font-size: 1.1rem !important;
+  }
+  .content {
+    padding-left: 4rem !important;
+  }
 }
 </style>

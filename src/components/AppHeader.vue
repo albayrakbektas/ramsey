@@ -1,19 +1,21 @@
 <template>
   <div id="header-container">
-    <div>
+    <div
+      class="header-bg"
+      :class="{ 'active-header-bg': $store.state.isScrolled }"
+    ></div>
+    <div class="py">
       <img alt="Name logo" src="../assets/brand-logo.png" />
     </div>
-    <div class="mid">
+    <div v-if="!$store.state.isMobileView" class="mid">
       <a href="tel:+905050070844"> +96 56-85-13-79 </a>
       <div>
         <span class="slash"> / </span>
       </div>
       <a href="mailto:albayrakbektas44@gmail.com"> contact@robert.com </a>
     </div>
-    <div>
-      <div>
-        <i @click="openMenu" class="fa-regular fa-bars menu-icon"></i>
-      </div>
+    <div class="py">
+      <i @click="openMenu" class="fa-regular fa-bars menu-icon"></i>
     </div>
   </div>
 </template>
@@ -21,6 +23,9 @@
 <script>
 export default {
   name: "AppHeader",
+  data() {
+    return {};
+  },
   methods: {
     openMenu() {
       this.$store.state.isMenuOpen = true;
@@ -68,6 +73,31 @@ img {
     color: #c32865;
   }
 }
-span {
+.header-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background-color: #272727;
+  transition: height 1s;
+  z-index: 1;
+}
+.active-header-bg {
+  height: 100%;
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 0 !important;
+  }
+  #header-container {
+    grid-template-columns: repeat(2, auto) !important;
+    padding: 0 1.5rem !important;
+    height: fit-content;
+  }
+  .py {
+    padding: 2rem 0;
+  }
 }
 </style>

@@ -6,10 +6,10 @@
       <ThirdSection id="three" class="section" />
       <FourthSection id="four" class="section" />
       <FifthSection id="five" class="section" />
-      <SixthSection id="six" class="section" />
-      <SeventhSection id="seven" class="section" />
-      <ArticlesSection id="eight" class="section" />
-      <ContactSection id="nine" class="section" />
+      <SixthSection id="six" class="section section-none" />
+      <SeventhSection id="seven" class="section section-none" />
+      <ArticlesSection id="eight" class="section section-none" />
+      <ContactSection id="nine" class="section section-none" />
     </div>
     <div class="dots">
       <span
@@ -81,10 +81,24 @@ export default {
       counter: 0,
     };
   },
+  created() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
   mounted() {
     document.addEventListener("wheel", this.handleWheel);
+    window.addEventListener("scroll", this.updateScroll);
+  },
+  beforeMount() {
+    window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
+    updateScroll() {
+      const section = document.querySelector(".active-section");
+      console.log(section.scrollTop);
+      if (window.scrollY > 0) {
+        this.$store.state.isScrolled = true;
+      }
+    },
     dotEvent(e) {
       if (this.$store.state.isMenuOpen) {
         return;
@@ -172,6 +186,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.section {
+  display: grid !important;
+}
+.active-section {
+  display: grid !important;
+}
+.section-none {
+  display: none !important;
+}
 .sections {
   padding: 0 8rem;
   overflow-y: scroll;
@@ -182,7 +205,7 @@ export default {
 }
 .section {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   left: 0;
   top: 0;

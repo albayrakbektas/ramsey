@@ -57,6 +57,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .content {
+    padding: 12rem 0 7rem 0 !important;
+    margin-top: 0 !important;
+    &:nth-of-type(1) {
+      margin-top: 3rem !important;
+    }
+    &:first-child {
+      margin-top: 0 !important;
+    }
+  }
+}
 .container-xy {
   height: 100%;
   overflow-y: hidden;
@@ -68,7 +80,7 @@ export default {
 }
 .content {
   gap: 40px;
-  padding: 0 !important;
+  padding: 0;
   margin-top: 8rem;
 }
 .footer {

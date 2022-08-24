@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-text">
+  <div v-if="!$store.state.isMobileView" class="bg-text">
     <span class="rotate-text">{{ text }}</span>
   </div>
 </template>

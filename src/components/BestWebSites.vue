@@ -25,6 +25,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  h1 {
+    text-align: center !important;
+  }
+  .fourth-right-container {
+    width: 85%;
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
 .fourth-right-container {
   display: grid;
   align-content: space-evenly;

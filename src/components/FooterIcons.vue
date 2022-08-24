@@ -18,10 +18,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  a {
+    padding: 0 0 0 0.5rem !important;
+  }
+  i {
+    color: #fff !important;
+  }
+}
 .icon-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
+  grid-template-columns: repeat(5, auto);
   align-items: center;
   gap: 0.5rem;
 }

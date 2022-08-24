@@ -1,7 +1,7 @@
 <template>
   <div class="third-section">
     <BgImage :bg-img="bgImg" />
-    <BgText text="Resume" />
+    <BgText text="resume" />
     <div class="content">
       <ResumeCard resume-type="Education" :course="course" />
       <ResumeCard resume-type="Education" :course="course" />
@@ -35,6 +35,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .content {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    padding-left: 0 !important;
+  }
+  img {
+    height: 100%;
+  }
+}
 .third-section {
   overflow-y: scroll;
   overflow-x: hidden;

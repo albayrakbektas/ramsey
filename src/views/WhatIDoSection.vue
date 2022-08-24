@@ -34,13 +34,59 @@ import BgText from "@/components/BgText";
 export default {
   name: "SecondSection",
   components: { BgText, SkillCard },
-  created() {
-    // document.querySelector(".hr").classList.add("active");
-  },
+  // methods: {
+  //   updateScroll() {
+  //     console.log(".", window.scrollY);
+  //     console.log("..", window.scrollX);
+  //     console.log("...", window.screenTop);
+  //     if (window.scrollY > 0) {
+  //       this.isScrolled = true;
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   window.addEventListener("scroll", this.updateScroll);
+  // },
 };
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .container {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    height: 100vh !important;
+  }
+  .content {
+    overflow-y: scroll !important;
+  }
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    padding-top: 2rem !important;
+  }
+  h1 {
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+  .main-content {
+    margin-top: 70px !important;
+    padding: 0 2rem !important;
+  }
+  .bottom-link {
+    margin: 2rem 0 4rem 0 !important;
+  }
+  .hr {
+    width: 15vw !important;
+  }
+  h2 {
+    padding-left: 15vw !important;
+    font-family: Montserrat, sans-serif !important;
+  }
+  .section {
+    align-items: unset !important;
+  }
+}
 .section {
   align-content: center;
 }
@@ -55,7 +101,7 @@ h1 {
 }
 h2 {
   cursor: pointer;
-  z-index: 2;
+  z-index: 202;
   width: min-content;
   white-space: nowrap;
   align-self: end;

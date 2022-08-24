@@ -51,6 +51,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .project-details {
+    padding: 0 2rem;
+    grid-template-columns: auto 1fr !important;
+    align-items: center;
+  }
+  .project-number {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    span {
+      font-size: 1.2rem !important;
+      display: unset !important;
+      height: unset !important;
+    }
+  }
+  .title {
+    font-size: 2.5rem !important;
+  }
+  .project-sub-title {
+    &span {
+      font-size: 1rem !important;
+    }
+  }
+}
 span {
   color: #fff;
   opacity: 0.5;

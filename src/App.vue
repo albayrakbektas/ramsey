@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header-position container">
+    <div class="header-position">
       <AppHeader />
     </div>
     <MainPage />
@@ -24,12 +24,26 @@ import MainMenu from "@/components/MainMenu";
 export default {
   name: "App",
   components: { MainMenu, AppFooter, AppHeader, MainPage },
+  created() {
+    if (window.innerWidth <= 500) {
+      this.$store.state.isMobileView = true;
+    }
+  },
   mounted() {
     document.querySelectorAll(".hr").forEach((e) => {
       e.style.width = "10vw";
     });
+    // window.addEventListener("scroll", this.updateScroll);
+  },
+  beforeMount() {
+    // window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
+    // updateScroll() {
+    //   if (window.scrollY > 0) {
+    //     this.$store.state.isScrolled = true;
+    //   }
+    // },
     closeMenu() {
       this.$store.state.isMenuOpen = false;
       document.querySelector(".main-menu").classList.remove("opened-menu");
@@ -40,14 +54,46 @@ export default {
 </script>
 
 <style lang="scss">
+@media (max-width: 500px) {
+  .content {
+    margin-bottom: 0 !important;
+  }
+  body {
+    background-color: #1b1b1b !important;
+    overflow: auto !important;
+  }
+  .container {
+    padding: 1.5rem !important;
+  }
+  h1 {
+    font-size: 4.6rem !important;
+  }
+  .section {
+    display: grid !important;
+    align-items: center !important;
+  }
+  .dots {
+    right: 1.5rem !important;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #1b1b1b !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 8px;
+  }
+}
 * {
   z-index: 1;
   box-sizing: border-box;
 }
 html {
   font-size: 14px !important;
-  @media only screen and (min-width: 768px) {
-    font-size: 13px;
+  @media only screen and (max-width: 768px) {
+    font-size: 13px !important;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 12px !important;
   }
 }
 body {
@@ -55,6 +101,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  max-width: 100vw;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -84,6 +131,7 @@ h1 {
   -moz-osx-font-smoothing: grayscale;
   max-height: calc(100vh - 70px);
   width: 100vw;
+  max-width: 100vw;
 }
 .content {
   display: grid;
@@ -113,6 +161,9 @@ h1,
 h2,
 a {
   color: #ffffff;
+}
+p {
+  font-family: Poppins, sans-serif !important;
 }
 .purple {
   color: #c32865;
@@ -176,6 +227,7 @@ i {
   float: left;
   position: fixed;
   left: 0;
+  z-index: 202;
 }
 .h2 {
   padding-left: calc(8vw);

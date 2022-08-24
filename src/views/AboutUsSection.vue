@@ -40,9 +40,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .content {
+    overflow-y: scroll !important;
+    height: 100vh !important;
+    grid-template-columns: 1fr !important;
+    padding: 70px 0 !important;
+  }
+}
 .third-section {
-  //grid-template-columns: auto 1fr 1fr;
-  //grid-column-gap: 3rem;
   justify-items: center;
 }
 .content {

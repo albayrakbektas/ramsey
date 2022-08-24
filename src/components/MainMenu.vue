@@ -109,6 +109,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .main-menu {
+    width: 100vw !important;
+    grid-template-rows: repeat(3, auto);
+    padding: 3rem 1.5rem 0 2.9rem !important;
+  }
+  nav {
+    height: 95% !important;
+    margin-top: 1rem !important;
+    align-self: center;
+  }
+  .exit {
+    i {
+      font-size: 24px !important;
+    }
+  }
+  li {
+    padding: 1.25rem 0 !important;
+    &:first-child {
+      padding: 0 0 1.25rem !important;
+    }
+  }
+  .menu-footer {
+    justify-content: start;
+  }
+  a.menu-link {
+    font-size: 20px !important;
+  }
+  i {
+    font-size: 17px !important;
+  }
+  p {
+    font-size: 12px;
+    font-family: Poppins, sans-serif;
+  }
+  .menu-footer {
+    width: 100% !important;
+  }
+}
 nav,
 .menu-footer {
   transform: translateY(100px);
@@ -124,8 +163,8 @@ nav,
   display: grid;
   align-items: center;
   transform: translateX(100%);
-  transition: linear 300ms;
-  -webkit-transition: linear 300ms;
+  transition: linear 100ms;
+  -webkit-transition: linear 100ms;
   z-index: 111;
 }
 nav {
@@ -137,10 +176,14 @@ nav {
   -webkit-transition: 1s;
 }
 ul {
-  padding-inline-start: 0 !important;
+  margin-block-start: 0 !important;
+  padding-inline-start: 0;
 }
 li {
-  padding: 1rem 0 !important;
+  padding: 1rem 0;
+  &:first-child {
+    padding: 0 0 1rem;
+  }
 }
 ::-webkit-scrollbar {
   background-color: #1b1b1b;

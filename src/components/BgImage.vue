@@ -17,6 +17,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  img {
+    object-fit: cover !important;
+  }
+}
 .bg-img {
   position: absolute;
   left: 0;

@@ -19,6 +19,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  p {
+    //font-size: 0.9rem !important;
+  }
+}
 #footer-container {
   display: grid;
   grid-template-columns: repeat(2, auto);

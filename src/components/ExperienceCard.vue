@@ -23,6 +23,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .experience-card {
+    width: unset !important;
+  }
+}
 .experience-card {
   border: 1px solid #ffffff;
   display: grid;
