@@ -1,40 +1,42 @@
 <template>
-  <div class="reviews">
-    <BgImage :bg-img="bgImg" />
-    <BgText text="reviews" />
-    <div class="content reviews-slider">
-      <div class="slider-container">
-        <ReviewCard
-          class="review-card"
-          v-for="(item, index) of firstReviewList"
-          :review="item"
-          :key="index"
-        />
+  <div class="reviews-container">
+    <div class="reviews">
+      <BgImage :bg-img="bgImg" />
+      <BgText text="reviews" />
+      <div class="content reviews-slider">
+        <div class="slider-container">
+          <ReviewCard
+            class="review-card"
+            v-for="(item, index) of firstReviewList"
+            :review="item"
+            :key="index"
+          />
+        </div>
+        <div class="slider-container">
+          <ReviewCard
+            class="review-card"
+            v-for="(item, index) of secondReviewList"
+            :review="item"
+            :key="index"
+          />
+        </div>
+        <div class="slider-container">
+          <ReviewCard
+            class="review-card"
+            v-for="(item, index) of thirdReviewList"
+            :review="item"
+            :key="index"
+          />
+        </div>
       </div>
-      <div class="slider-container">
-        <ReviewCard
-          class="review-card"
-          v-for="(item, index) of secondReviewList"
-          :review="item"
+      <div class="reviews-dots">
+        <span
+          @click="changeSlide"
+          v-for="index in 3"
+          class="reviews-dot"
           :key="index"
-        />
+        ></span>
       </div>
-      <div class="slider-container">
-        <ReviewCard
-          class="review-card"
-          v-for="(item, index) of thirdReviewList"
-          :review="item"
-          :key="index"
-        />
-      </div>
-    </div>
-    <div class="reviews-dots">
-      <span
-        @click="changeSlide"
-        v-for="index in 3"
-        class="reviews-dot"
-        :key="index"
-      ></span>
     </div>
   </div>
 </template>
@@ -121,6 +123,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .reviews-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .content {
+    margin-top: 2rem !important;
+  }
+  .reviews {
+    overflow-x: hidden;
+    position: relative;
+    padding: 5rem 0 8rem;
+    align-self: start;
+  }
+  .bg-img {
+    bottom: 0;
+  }
+  .reviews-dots {
+    margin-bottom: 0 !important;
+  }
+}
 .reviews {
   display: grid;
 }

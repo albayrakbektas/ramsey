@@ -6,10 +6,10 @@
       <ThirdSection id="three" class="section" />
       <FourthSection id="four" class="section" />
       <FifthSection id="five" class="section" />
-      <SixthSection id="six" class="section section-none" />
-      <SeventhSection id="seven" class="section section-none" />
-      <ArticlesSection id="eight" class="section section-none" />
-      <ContactSection id="nine" class="section section-none" />
+      <SixthSection id="six" class="section" />
+      <SeventhSection id="seven" class="section" />
+      <ArticlesSection id="eight" class="section" />
+      <ContactSection id="nine" class="section" />
     </div>
     <div class="dots">
       <span
@@ -120,6 +120,14 @@ export default {
       sections[index].classList.add("active-section");
     },
     handleWheel(e) {
+      if (
+        !(window.innerHeight + window.scrollY) >= document.body.offsetHeight
+      ) {
+        return;
+      }
+      if (window.scrollY !== 0) {
+        return;
+      }
       if (this.$store.state.isMenuOpen) {
         return;
       }

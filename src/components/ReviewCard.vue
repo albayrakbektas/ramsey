@@ -30,6 +30,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .content,
+  .content-left {
+    grid-template-columns: 1fr !important;
+  }
+  .content-right {
+    padding-top: 1rem !important;
+  }
+}
 .review {
   margin-left: 20px;
 }

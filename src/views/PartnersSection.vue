@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="partners-section">
     <BgText text="partners" />
     <div class="content">
       <div>
@@ -103,6 +103,26 @@ img {
   &:hover {
     transition: all 0.4s ease-in 0s;
     opacity: 1;
+  }
+}
+@media (max-width: 500px) {
+  .partners-section {
+    overflow-y: scroll !important;
+  }
+  .content {
+    padding: 0 3rem !important;
+    height: 100vh;
+  }
+  .logo-grid {
+    grid-template-columns: 1fr !important;
+    padding-bottom: 6rem;
+  }
+  li {
+    justify-self: center;
+  }
+  h1 {
+    padding: 10rem 0 5rem !important;
+    font-size: 3rem !important;
   }
 }
 </style>

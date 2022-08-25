@@ -5,7 +5,7 @@
       <span>, USA</span>
     </h1>
     <h2>
-      <span>166 Main Street, Beverly Hills, CA 90210</span>
+      <p>166 Main Street, Beverly Hills, CA 90210</p>
     </h2>
     <div class="contact-hrefs">
       <a href="mailto:albayrakbektas44@gmail.com">contact@robert.com</a>
@@ -21,6 +21,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  h1 {
+    span {
+      font-size: 2.7rem !important;
+    }
+  }
+  h2 {
+    p {
+      //line-height: 0.2rem !important;
+    }
+  }
+  .contact-hrefs {
+    margin-top: 3rem !important;
+    margin-bottom: 6rem !important;
+  }
+}
 .contact-hrefs {
   display: grid;
   gap: 1rem;
@@ -49,7 +65,7 @@ h1 {
   }
 }
 h2 {
-  span {
+  p {
     font-size: 1.7rem;
     color: #999999;
   }

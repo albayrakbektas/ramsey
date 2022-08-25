@@ -1,20 +1,22 @@
 <template>
-  <div class="container">
-    <BgText text="articles" />
-    <div class="content">
-      <div>
-        <h1><span>Recent</span> news</h1>
-      </div>
-      <div class="article-grid">
-        <ArticleCard
-          v-for="(item, index) of articleList"
-          :article="item"
-          :key="index"
-        />
-      </div>
-      <div class="footer">
-        <hr class="hr" />
-        <span class="h2"> View all posts </span>
+  <div class="article-container">
+    <div class="container">
+      <BgText text="articles" />
+      <div class="content">
+        <div>
+          <h1><span>Recent</span> news</h1>
+        </div>
+        <div class="article-grid">
+          <ArticleCard
+            v-for="(item, index) of articleList"
+            :article="item"
+            :key="index"
+          />
+        </div>
+        <div class="footer">
+          <hr class="hr" />
+          <span class="h2"> View all posts </span>
+        </div>
       </div>
     </div>
   </div>
@@ -93,6 +95,36 @@ h1 {
   &:hover {
     color: #c32865;
     cursor: pointer;
+  }
+}
+@media (max-width: 500px) {
+  .article-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .content {
+    padding: 0 2rem !important;
+  }
+  .article-grid {
+    grid-template-columns: 1fr !important;
+  }
+  h1 {
+    padding: 10rem 0 5rem !important;
+    font-size: 3rem !important;
+  }
+  .footer {
+    margin-bottom: 6rem;
+  }
+  .hr {
+    width: 15vw !important;
+  }
+  .h2 {
+    padding-left: 10vw;
+    font-size: 1.3rem;
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 400;
   }
 }
 </style>

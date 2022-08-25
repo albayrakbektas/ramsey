@@ -25,6 +25,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .form-top {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  input,
+  textarea {
+    padding: 1rem 1.25rem !important;
+  }
+  button {
+  }
+}
 .form-top {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
