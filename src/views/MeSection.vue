@@ -123,6 +123,7 @@ h1 {
   }
   .content {
     padding-left: 4rem !important;
+    //margin
   }
 }
 </style>

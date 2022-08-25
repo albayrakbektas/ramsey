@@ -28,13 +28,18 @@ export default {
   },
   mounted() {
     document
+      .querySelector(".project-number > span")
+      .classList.add("active-number");
+    document
       .querySelector(".project-title-hr > span.title")
       .classList.add("active-item");
     document.querySelector(".project-title-hr > hr").classList.add("active-hr");
   },
   methods: {
     changeBg(e) {
+      let index = 0;
       const item = document.querySelector(".active-item");
+      const numbers = document.querySelectorAll(".project-number > span");
       item.classList.remove("active-item");
       item.nextElementSibling.classList.remove("active-hr");
       e.target.classList.add("active-item");
@@ -43,8 +48,11 @@ export default {
       for (let i = 0; i < items.length; i++) {
         if (items[i].className === "title active-item") {
           this.$store.state.bgImgIndex = i;
+          index = i;
         }
       }
+      numbers.forEach((e) => e.classList.remove("active-number"));
+      numbers[index].classList.add("active-number");
     },
   },
 };
@@ -77,6 +85,9 @@ export default {
       font-size: 1rem !important;
     }
   }
+  hr {
+    top: calc(10%) !important;
+  }
 }
 span {
   color: #fff;
@@ -96,7 +107,8 @@ hr {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
-.active-item {
+.active-item,
+.active-number {
   transition: all 0.4s ease-in 0s;
   opacity: 1;
 }

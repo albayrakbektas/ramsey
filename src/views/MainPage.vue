@@ -126,7 +126,7 @@ export default {
       if (this.counter > 0) {
         return;
       }
-      if (e.deltaX != 0) {
+      if (e.deltaX !== 0) {
         return;
       }
       let firstSection = document.querySelector("#one");
@@ -186,6 +186,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 500px) {
+  .w3-white,
+  .w3-hover-white:hover {
+    background-color: #c32865 !important;
+  }
+}
 .section {
   display: grid !important;
 }

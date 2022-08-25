@@ -56,7 +56,7 @@ export default {
 <style lang="scss">
 @media (max-width: 500px) {
   .content {
-    margin-bottom: 0 !important;
+    //margin-bottom: 0 !important;
   }
   body {
     background-color: #1b1b1b !important;
