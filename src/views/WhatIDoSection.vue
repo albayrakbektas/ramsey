@@ -1,29 +1,31 @@
 <template>
   <div class="container">
     <BgText text="What i do" />
-    <div class="content main-content">
-      <h1><span class="purple">My</span> specialization</h1>
-      <div class="cards">
-        <SkillCard
-          skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
-          skill-icon="devices"
-          skill-title="WEB DESIGN"
-        />
-        <SkillCard
-          skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
-          skill-icon="developer_mode"
-          skill-title="MOBILE CODING"
-        />
-        <SkillCard
-          skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
-          skill-icon="diamond"
-          skill-title="ILLUSTRATION"
-        />
+    <div class="section-content-container">
+      <div class="content main-content">
+        <h1><span class="purple">My</span> specialization</h1>
+        <div class="cards">
+          <SkillCard
+            skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
+            skill-icon="devices"
+            skill-title="WEB DESIGN"
+          />
+          <SkillCard
+            skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
+            skill-icon="developer_mode"
+            skill-title="MOBILE CODING"
+          />
+          <SkillCard
+            skill-content="Working with client and community, we deliver masterplans that create vibrant new places and spaces, attract people, and encourage investment through."
+            skill-icon="diamond"
+            skill-title="ILLUSTRATION"
+          />
+        </div>
       </div>
-    </div>
-    <div class="bottom-link">
-      <hr class="hr" />
-      <h2 class="h2">Download Resume</h2>
+      <div class="bottom-link">
+        <hr class="hr" />
+        <h2 class="h2">Download Resume</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -52,13 +54,18 @@ export default {
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
-  .container {
-    overflow-y: auto !important;
+  .section-content-container {
+    overflow-y: scroll;
     overflow-x: hidden;
-    height: 100vh !important;
+  }
+  .container {
+    overflow-y: hidden !important;
+    overflow-x: hidden;
+    min-height: 100vh !important;
+    padding: 0 !important;
   }
   .content {
-    overflow-y: scroll !important;
+    overflow-y: hidden !important;
   }
   .cards {
     grid-template-columns: 1fr !important;
@@ -74,13 +81,14 @@ export default {
     padding: 0 2rem !important;
   }
   .bottom-link {
-    margin: 2rem 0 4rem 0 !important;
+    margin: 2rem 0 6rem 0 !important;
   }
   .hr {
     width: 15vw !important;
+    position: unset !important;
   }
   h2 {
-    padding-left: 15vw !important;
+    padding-left: 5vw !important;
     font-family: Montserrat, sans-serif !important;
   }
   .section {

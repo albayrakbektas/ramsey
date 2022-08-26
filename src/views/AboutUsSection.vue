@@ -45,7 +45,7 @@ export default {
     overflow-y: scroll !important;
     height: 100vh !important;
     grid-template-columns: 1fr !important;
-    padding: 70px 0 !important;
+    padding: 8rem 0 !important;
   }
 }
 .third-section {

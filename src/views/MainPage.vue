@@ -85,7 +85,7 @@ export default {
     window.addEventListener("scroll", this.updateScroll);
   },
   mounted() {
-    document.addEventListener("wheel", this.handleWheel);
+    window.addEventListener("wheel", this.handleWheel);
     window.addEventListener("scroll", this.updateScroll);
   },
   beforeMount() {
@@ -93,10 +93,14 @@ export default {
   },
   methods: {
     updateScroll() {
-      const section = document.querySelector(".active-section");
-      console.log(section.scrollTop);
+      // const section = document.querySelector(".active-section");
+      console.log(
+        window.innerHeight + window.scrollY >= document.body.offsetHeight
+      );
       if (window.scrollY > 0) {
         this.$store.state.isScrolled = true;
+      } else {
+        this.$store.state.isScrolled = false;
       }
     },
     dotEvent(e) {
@@ -145,7 +149,9 @@ export default {
         : null;
       let prevSibling = activeSection.previousElementSibling;
       activeSection.classList.remove("active-section");
-
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        sections.forEach((e) => (e.style.overflowY = "hidden !important"));
+      }
       let activeClass = activeSection.id;
       let firstDot = document.querySelector(".one");
       let dots = document.querySelectorAll(".demo");
@@ -195,6 +201,9 @@ export default {
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
+  .sections {
+    padding: 0 !important;
+  }
   .w3-white,
   .w3-hover-white:hover {
     background-color: #c32865 !important;

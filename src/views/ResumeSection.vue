@@ -1,10 +1,13 @@
 <template>
-  <div class="third-section">
-    <BgImage :bg-img="bgImg" />
-    <BgText text="resume" />
-    <div class="content">
-      <ResumeCard resume-type="Education" :course="course" />
-      <ResumeCard resume-type="Education" :course="course" />
+  <div class="section-container" @scroll="updateScroll">
+    <div class="third-section">
+      <div class="bg-abs-img"></div>
+      <!--      <BgImage :bg-img="bgImg" />-->
+      <BgText text="resume" />
+      <div class="content">
+        <ResumeCard resume-type="Education" :course="course" />
+        <ResumeCard resume-type="Education" :course="course" />
+      </div>
     </div>
   </div>
 </template>
@@ -12,10 +15,10 @@
 <script>
 import ResumeCard from "@/components/ResumeCard";
 import BgText from "@/components/BgText";
-import BgImage from "@/components/BgImage";
+// import BgImage from "@/components/BgImage";
 export default {
   name: "ThirdSection",
-  components: { BgImage, BgText, ResumeCard },
+  components: { BgText, ResumeCard },
   data() {
     return {
       bgImg: {
@@ -31,15 +34,48 @@ export default {
       },
     };
   },
+  methods: {
+    updateScroll() {
+      const section = document.querySelector(".active-section");
+      console.log(section.scrollY);
+      if (window.scrollY > 0) {
+        this.$store.state.isScrolled = true;
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
+  .bg-abs-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-image: url("../assets/section-bg-images/resume-bg_1.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+  .section-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .third-section {
+    position: relative;
+    overflow-y: hidden !important;
+    padding: 5rem 0 8rem;
+    align-self: start;
+  }
   .content {
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(2, 1fr) !important;
-    padding-left: 0 !important;
+    padding: 0 2rem !important;
+    margin-top: 5rem !important;
   }
   img {
     height: 100%;

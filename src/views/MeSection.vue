@@ -104,9 +104,14 @@ h1 {
   justify-content: center;
 }
 @media (max-width: 500px) {
+  .first-section {
+    overflow: hidden !important;
+  }
   h1 {
     font-size: 5.55rem !important;
+    letter-spacing: 0.02rem !important;
     * {
+      letter-spacing: 0.02rem !important;
       font-size: 5.55rem !important;
     }
   }
@@ -118,12 +123,8 @@ h1 {
     height: 60px !important;
     width: 60px !important;
   }
-  .watch-resume {
-    font-size: 1.1rem !important;
-  }
   .content {
     padding-left: 4rem !important;
-    //margin
   }
 }
 </style>

@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 @media (max-width: 500px) {
   .experience-card {
-    width: unset !important;
+    width: 80% !important;
   }
 }
 .experience-card {
