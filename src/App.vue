@@ -136,6 +136,7 @@ h1 {
   max-height: calc(100vh - 70px);
   width: 100vw;
   max-width: 100vw;
+  background-color: #fff;
 }
 .content {
   display: grid;
