@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  padding: 0 70px !important;
+  padding: 0 0 0 70px !important;
 }
 .logo-grid {
   display: grid;
@@ -96,6 +96,9 @@ h1 {
   span {
     color: #c32865;
   }
+}
+li {
+  padding-right: 3rem;
 }
 img {
   padding: 10px;
@@ -116,6 +119,7 @@ img {
   }
   li {
     justify-self: center;
+    padding-right: 0 !important;
   }
   h1 {
     padding: 10rem 0 5rem !important;

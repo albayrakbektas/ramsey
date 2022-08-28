@@ -60,6 +60,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hr {
+  width: 10vw !important;
+}
 .content {
   padding: 0 8rem !important;
   margin: 0;

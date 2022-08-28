@@ -63,7 +63,10 @@ h1 {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-
+.hr {
+  width: 10vw !important;
+  margin-top: 3.5rem !important;
+}
 .content-bottom {
   display: grid;
   grid-template-columns: auto 1fr;

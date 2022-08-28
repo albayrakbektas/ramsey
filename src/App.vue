@@ -80,7 +80,7 @@ export default {
     right: 1.5rem !important;
   }
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 8px !important;
     background-color: #1b1b1b !important;
   }
   ::-webkit-scrollbar-thumb {
@@ -238,6 +238,7 @@ i {
   font-size: 1.3rem;
 }
 ::-webkit-scrollbar {
+  width: 8px;
   background-color: #000;
 }
 ::-webkit-scrollbar-thumb {

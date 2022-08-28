@@ -118,4 +118,7 @@ h2 {
   grid-template-rows: auto 1fr;
   align-items: end;
 }
+.hr {
+  width: 10vw !important;
+}
 </style>
