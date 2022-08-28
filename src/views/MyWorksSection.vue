@@ -71,11 +71,8 @@ export default {
 }
 .container-xy {
   height: 100%;
-  overflow-y: hidden;
 }
 .container-y {
-  overflow-y: scroll;
-  overflow-x: hidden;
   height: 100%;
 }
 .content {

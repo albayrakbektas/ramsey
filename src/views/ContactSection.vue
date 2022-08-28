@@ -45,10 +45,6 @@ export default {
   margin-left: 40px;
 }
 @media (max-width: 500px) {
-  .contact-container-parent {
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
   .content {
     grid-template-columns: 1fr !important;
     padding: 0 3rem 6rem !important;

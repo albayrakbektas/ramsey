@@ -116,7 +116,7 @@ export default {
     padding: 3rem 1.5rem 0 2.9rem !important;
   }
   nav {
-    height: 95% !important;
+    height: 85% !important;
     margin-top: 1rem !important;
     align-self: center;
   }
@@ -163,8 +163,8 @@ nav,
   display: grid;
   align-items: center;
   transform: translateX(100%);
-  transition: linear 100ms;
-  -webkit-transition: linear 100ms;
+  transition: linear 300ms;
+  -webkit-transition: linear 300ms;
   z-index: 111;
 }
 nav {

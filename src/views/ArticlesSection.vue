@@ -84,10 +84,6 @@ h1 {
   align-items: center;
   width: 100vw;
   margin-top: 2rem;
-  //position: fixed;
-  //z-index: 10;
-  //bottom: 70px;
-  //left: 0;
 }
 .h2 {
   padding-left: 0;
@@ -99,8 +95,6 @@ h1 {
 }
 @media (max-width: 500px) {
   .article-container {
-    overflow-y: scroll;
-    overflow-x: hidden;
     height: 100vh;
   }
   .content {

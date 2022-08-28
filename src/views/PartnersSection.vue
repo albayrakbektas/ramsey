@@ -106,9 +106,6 @@ img {
   }
 }
 @media (max-width: 500px) {
-  .partners-section {
-    overflow-y: scroll !important;
-  }
   .content {
     padding: 0 3rem !important;
     height: 100vh;

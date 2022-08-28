@@ -1,8 +1,7 @@
 <template>
-  <div class="section-container" @scroll="updateScroll">
+  <div class="section-container">
     <div class="third-section">
       <div class="bg-abs-img"></div>
-      <!--      <BgImage :bg-img="bgImg" />-->
       <BgText text="resume" />
       <div class="content">
         <ResumeCard resume-type="Education" :course="course" />
@@ -34,15 +33,7 @@ export default {
       },
     };
   },
-  methods: {
-    updateScroll() {
-      const section = document.querySelector(".active-section");
-      console.log(section.scrollY);
-      if (window.scrollY > 0) {
-        this.$store.state.isScrolled = true;
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -61,13 +52,8 @@ export default {
     background-size: cover;
     background-position: center;
   }
-  .section-container {
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
   .third-section {
     position: relative;
-    overflow-y: hidden !important;
     padding: 5rem 0 8rem;
     align-self: start;
   }
@@ -80,10 +66,6 @@ export default {
   img {
     height: 100%;
   }
-}
-.third-section {
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 .content {
   grid-template-columns: repeat(2, 1fr);

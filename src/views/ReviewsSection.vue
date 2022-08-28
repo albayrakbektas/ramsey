@@ -124,15 +124,10 @@ export default {
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
-  .reviews-container {
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
   .content {
     margin-top: 2rem !important;
   }
   .reviews {
-    overflow-x: hidden;
     position: relative;
     padding: 5rem 0 8rem;
     align-self: start;

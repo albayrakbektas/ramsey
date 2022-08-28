@@ -1,6 +1,16 @@
 <template>
   <div>
-    <div class="sections" @wheel="handleWheel">
+    <div
+      class="sections"
+      @wheel="
+        isMobileView
+          ? () => {
+              console.log('selam');
+              return;
+            }
+          : handleWheel
+      "
+    >
       <FirstSection id="one" class="section active-section" />
       <SecondSection id="two" class="section" />
       <ThirdSection id="three" class="section" />
@@ -79,21 +89,23 @@ export default {
     return {
       slideIndex: 1,
       counter: 0,
+      isMobileView: false,
     };
   },
-  created() {
-    window.addEventListener("scroll", this.updateScroll);
-  },
+  // created() {
+  //   window.addEventListener("scroll", this.updateScroll);
+  // },
   mounted() {
     window.addEventListener("wheel", this.handleWheel);
     window.addEventListener("scroll", this.updateScroll);
+    this.isMobileView = window.innerWidth <= 500 ? true : false;
+    console.log(this.isMobileView, window.innerWidth);
   },
   beforeMount() {
     window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
     updateScroll() {
-      // const section = document.querySelector(".active-section");
       console.log(
         window.innerHeight + window.scrollY >= document.body.offsetHeight
       );
@@ -124,6 +136,12 @@ export default {
       sections[index].classList.add("active-section");
     },
     handleWheel(e) {
+      if (this.$store.state.isScrolled) {
+        setTimeout(() => {
+          console.log("s");
+        }, 1000);
+        return;
+      }
       if (
         !(window.innerHeight + window.scrollY) >= document.body.offsetHeight
       ) {
@@ -210,6 +228,8 @@ export default {
   }
 }
 .section {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   display: grid !important;
 }
 .active-section {

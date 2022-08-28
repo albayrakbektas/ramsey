@@ -42,7 +42,6 @@ export default {
 <style lang="scss" scoped>
 @media (max-width: 500px) {
   .content {
-    overflow-y: scroll !important;
     height: 100vh !important;
     grid-template-columns: 1fr !important;
     padding: 8rem 0 !important;

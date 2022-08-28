@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    isLandingPage: true,
     isMobileView: false,
     isScrolled: false,
     isMenuOpen: false,

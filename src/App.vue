@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <div class="header-position">
-      <AppHeader />
+    <LandingPage v-if="$store.state.isLandingPage" />
+    <div v-else>
+      <div class="header-position">
+        <AppHeader />
+      </div>
+      <MainPage />
+      <div class="footer-position container">
+        <AppFooter />
+      </div>
+      <div
+        @click="closeMenu"
+        v-if="this.$store.state.isMenuOpen"
+        class="full-width-absolute"
+      ></div>
+      <MainMenu />
     </div>
-    <MainPage />
-    <div class="footer-position container">
-      <AppFooter />
-    </div>
-    <div
-      @click="closeMenu"
-      v-if="this.$store.state.isMenuOpen"
-      class="full-width-absolute"
-    ></div>
-    <MainMenu />
   </div>
 </template>
 
@@ -21,9 +24,10 @@ import MainPage from "@/views/MainPage";
 import AppHeader from "@/components/AppHeader";
 import AppFooter from "@/components/AppFooter";
 import MainMenu from "@/components/MainMenu";
+import LandingPage from "@/views/LandingPage";
 export default {
   name: "App",
-  components: { MainMenu, AppFooter, AppHeader, MainPage },
+  components: { LandingPage, MainMenu, AppFooter, AppHeader, MainPage },
   created() {
     if (window.innerWidth <= 500) {
       this.$store.state.isMobileView = true;

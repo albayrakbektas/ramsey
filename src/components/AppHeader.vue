@@ -46,7 +46,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  padding: 0 1rem;
+  padding: 3rem 4rem;
 }
 img {
   height: 40px;

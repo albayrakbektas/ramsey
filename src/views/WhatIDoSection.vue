@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <BgText text="What i do" />
-    <div class="section-content-container">
+    <div @scroll="updateScroll" class="section-content-container">
       <div class="content main-content">
         <h1><span class="purple">My</span> specialization</h1>
         <div class="cards">
@@ -36,31 +36,25 @@ import BgText from "@/components/BgText";
 export default {
   name: "SecondSection",
   components: { BgText, SkillCard },
-  // methods: {
-  //   updateScroll() {
-  //     console.log(".", window.scrollY);
-  //     console.log("..", window.scrollX);
-  //     console.log("...", window.screenTop);
-  //     if (window.scrollY > 0) {
-  //       this.isScrolled = true;
-  //     }
-  //   },
-  // },
-  // mounted() {
-  //   window.addEventListener("scroll", this.updateScroll);
-  // },
+  methods: {
+    updateScroll() {
+      const div = document.querySelector(".section-content-container");
+      console.log(div.scrollHeight, div.scrollTop);
+      this.$store.state.isScrolled = true;
+      if (div.scrollTop > 310) {
+        this.$store.state.isScrolled = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
-  .section-content-container {
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
   .container {
-    overflow-y: hidden !important;
-    overflow-x: hidden;
     min-height: 100vh !important;
     padding: 0 !important;
   }
