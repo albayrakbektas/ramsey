@@ -23,9 +23,6 @@ import BgImage from "@/components/BgImage";
 export default {
   name: "FifthSection",
   components: { BgImage, BgText, ProjectDetails },
-  mounted() {
-    console.log(window.scrollX);
-  },
   data() {
     return {
       slideIndex: 0,

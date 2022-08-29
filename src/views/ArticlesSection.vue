@@ -96,9 +96,13 @@ h1 {
     cursor: pointer;
   }
 }
+.article-container {
+  padding-left: 20px;
+}
 @media (max-width: 500px) {
   .article-container {
     height: 100vh;
+    padding-left: 0;
   }
   .content {
     padding: 0 2rem !important;

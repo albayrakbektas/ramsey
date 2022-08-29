@@ -39,7 +39,6 @@ export default {
   methods: {
     updateScroll() {
       const div = document.querySelector(".section-content-container");
-      console.log(div.scrollHeight, div.scrollTop);
       this.$store.state.isScrolled = true;
       if (div.scrollTop > 310) {
         this.$store.state.isScrolled = false;

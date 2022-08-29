@@ -1,16 +1,6 @@
 <template>
   <div>
-    <div
-      class="sections"
-      @wheel="
-        isMobileView
-          ? () => {
-              console.log('selam');
-              return;
-            }
-          : handleWheel
-      "
-    >
+    <div class="sections" @wheel="handleWheel">
       <FirstSection id="one" class="section active-section" />
       <SecondSection id="two" class="section" />
       <ThirdSection id="three" class="section" />
@@ -92,23 +82,16 @@ export default {
       isMobileView: false,
     };
   },
-  // created() {
-  //   window.addEventListener("scroll", this.updateScroll);
-  // },
   mounted() {
     window.addEventListener("wheel", this.handleWheel);
     window.addEventListener("scroll", this.updateScroll);
     this.isMobileView = window.innerWidth <= 500 ? true : false;
-    console.log(this.isMobileView, window.innerWidth);
   },
   beforeMount() {
     window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
     updateScroll() {
-      console.log(
-        window.innerHeight + window.scrollY >= document.body.offsetHeight
-      );
       if (window.scrollY > 0) {
         this.$store.state.isScrolled = true;
       } else {
@@ -137,9 +120,7 @@ export default {
     },
     handleWheel(e) {
       if (this.$store.state.isScrolled) {
-        setTimeout(() => {
-          console.log("s");
-        }, 1000);
+        setTimeout(() => {}, 1000);
         return;
       }
       if (
