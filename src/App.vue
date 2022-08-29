@@ -133,7 +133,7 @@ h1 {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-height: calc(100vh - 70px);
+  //max-height: calc(100vh - 70px);
   width: 100vw;
   max-width: 100vw;
   background-color: #fff;

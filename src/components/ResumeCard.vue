@@ -34,6 +34,7 @@ export default {
   padding: 3.75rem;
   background-color: rgba(255, 255, 255, 0.1);
   height: fit-content;
+  width: 95%;
   &:hover {
     background-color: #c32865;
   }
@@ -41,8 +42,8 @@ export default {
 .resume-type {
   position: absolute;
   z-index: 2;
-  top: -3.3rem;
-  left: 3.75rem;
+  top: -4.5rem;
+  left: 5%;
 }
 h1 {
   color: #ffffff;

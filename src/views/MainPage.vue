@@ -148,9 +148,9 @@ export default {
         : null;
       let prevSibling = activeSection.previousElementSibling;
       activeSection.classList.remove("active-section");
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        sections.forEach((e) => (e.style.overflowY = "hidden !important"));
-      }
+      // if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      //   sections.forEach((e) => (e.style.overflowY = "hidden !important"));
+      // }
       let activeClass = activeSection.id;
       let firstDot = document.querySelector(".one");
       let dots = document.querySelectorAll(".demo");

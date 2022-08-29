@@ -42,9 +42,8 @@ export default {
 <style lang="scss" scoped>
 @media (max-width: 500px) {
   .content {
-    height: 100vh !important;
     grid-template-columns: 1fr !important;
-    padding: 8rem 0 !important;
+    padding: 8rem 0 4rem !important;
   }
 }
 .third-section {

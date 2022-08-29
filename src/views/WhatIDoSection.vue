@@ -53,6 +53,13 @@ export default {
 
 <style lang="scss" scoped>
 @media (max-width: 500px) {
+  .section-content-container {
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+  .section {
+    align-content: unset !important;
+  }
   .container {
     min-height: 100vh !important;
     padding: 0 !important;
@@ -70,11 +77,11 @@ export default {
     text-align: center;
   }
   .main-content {
-    margin-top: 70px !important;
+    margin-top: 20px !important;
     padding: 0 2rem !important;
   }
   .bottom-link {
-    margin: 2rem 0 6rem 0 !important;
+    margin: 2rem 0 4rem 0 !important;
   }
   .hr {
     width: 15vw !important;

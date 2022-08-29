@@ -1,6 +1,7 @@
 <template>
   <div class="first-section">
     <BgImage :bg-img="bgImage" />
+
     <div class="content">
       <div class="content-top">
         <h1>

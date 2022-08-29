@@ -111,7 +111,7 @@ h1 {
     grid-template-columns: 1fr !important;
   }
   h1 {
-    padding: 10rem 0 5rem !important;
+    padding: 8rem 0 2rem !important;
     font-size: 3rem !important;
   }
   .footer {
